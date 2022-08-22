@@ -29,9 +29,9 @@ body {
 } 
 
 button {
-    background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
+    background: radial-gradient(circle, rgb(158, 111, 222) 0%, rgb(81, 14, 120) 100%);
     border-radius: 8px;
-    color: #13293d;
+    color: #ffffff;
     cursor: pointer;
     font-size: 2em;
     font-family: prometo, sans-serif;
@@ -45,3 +45,8 @@ button {
     transition-timing-function: linear;
     margin-top: 0.6em;
   } 
+
+  #high-scores {
+
+    cursor: pointer;
+  }
