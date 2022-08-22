@@ -2,37 +2,33 @@
     box-sizing: border-box;
   }
 
-header {
+body {
 
     text-align: center;
-    font-family: soleto, Arial, Helvetica, sans-serif;
+    font-family: prometo, Arial, Helvetica, sans-serif;
     font-kerning: normal;
-    text-align: center;
-    margin: 0;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
     display: flex;
-    flex-direction: column;
+    
     min-height: 100vh;
     justify-content: center;
+
 }
 
-main {
+.timer-count {
+  font-size: xx-large;
 
-    font-family: soleto, Arial, Helvetica, sans-serif;
-    font-kerning: normal;
-    text-align: center;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
 }
 
 #high-scores { 
+    margin-top: 100px;
     color: inherit;
     text-decoration: none;  
 } 
 
-button {
+/*button {
     background: radial-gradient(circle, rgba(240,230,140,1) 0%, rgba(187,96,33,0.9542191876750701) 100%);
     border-radius: 8px;
     color: #13293d;
@@ -48,4 +44,4 @@ button {
     transition-property: background-color;
     transition-timing-function: linear;
     margin-top: 0.6em;
-  }
+  } */
