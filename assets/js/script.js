@@ -7,7 +7,7 @@ var timerId;
 // variables that reference elements from DOM
 
 var questionsEl = document.getElementById('questions');
-var optionsEl = document.getElementById('options');
+var optionsEl = document.getElementById('choices');
 var timerEl = document.getElementById('time');
 var submitBtn = document.getElementById('submit');
 var startBtn = document.getElementById('start');
@@ -39,12 +39,12 @@ function getQuestion() {
     optionsEl.innerHTML = '';
 
     //loop over choices
-    for (var i = 0; i < currentQuestion.options.length; i++) {
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
         console.log(currentQuestion);
-        console.log(currentQuestion.options);
+        console.log(currentQuestion.choices);
 
         //create button for each choice
-        var choice = currentQuestion.options[i];
+        var choice = currentQuestion.choices[i];
         var choiceNode = document.createElement('button');
         choiceNode.setAttribute('class', 'choice');
         choiceNode.setAttribute('value', choice);
