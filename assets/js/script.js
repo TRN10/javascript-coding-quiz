@@ -1,7 +1,7 @@
 // Variable to track state of quiz
 
 var currentQuestionIndex = 0;
-var time = questions.length * 15;
+var time = parseInt(questions.length * 15);
 var timerId;
 
 // variables that reference elements from DOM
@@ -18,14 +18,26 @@ var feedbackEl = document.getElementById('feedback');
 
 function startQuiz() {
 
+    var startScreen = document.getElementById('start-screen');
+    startScreen.setAttribute('class', 'hide');
+
     questionsEl.removeAttribute('class');
 
     timerId = setInterval(clockTick, 1000);
-
+    console.log(time);
+    console.log(clockTick);
     timerEl.textContent = time;
 
     getQuestion();
 }
+
+// function clockTick() {
+//     time--;
+//     timerEl.textContent = time;
+//     if (time <= 0) {
+//         quizEnd();
+//     }
+// }
 
 function getQuestion() {
 
