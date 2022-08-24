@@ -29,7 +29,7 @@ function startQuiz() {
 
 function getQuestion() {
 
-    var currentQuestion = questions[currentQuestionsIndex];
+    var currentQuestion = questions[currentQuestionIndex];
 
     //update title with current question
     var titleEl = document.getElementById('quiz-question');
@@ -101,3 +101,36 @@ function questionClick(event) {
         getQuestion();
     }
 }
+
+function quizEnd() {
+    //stop timer
+    clearInterval(timerId);
+
+    //show end screen
+    var endScreenEl = document.getElementById('end-screen');
+    endScreenEl.removeAttribute('class');
+
+    //show final score
+    var finalScoreEl = document.getElementById('final-score');
+    finalScoreEl.textContent = time;
+
+    //hide questions section
+    questionsEl.setAttribute('class', 'hide');
+}
+
+function clockTick() {
+    //update time
+    time--;
+    timerEl.textContent = time;
+
+    //check if user ran out of time
+    if (time <= 0) {
+        quizEnd();
+    }
+}
+
+// user clicks button to start quiz
+startBtn.onclick = startQuiz;
+
+//user clicks on  element with choices
+optionsEl.onclick = questionClick;
