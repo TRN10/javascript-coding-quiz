@@ -12,6 +12,7 @@ var timerEl = document.getElementById('time');
 var submitBtn = document.getElementById('submit');
 var startBtn = document.getElementById('start');
 var nameEl = document.getElementById('name');
+var feedbackEl = document.getElementById('feedback');
 
 // start quiz function
 
@@ -40,7 +41,7 @@ function getQuestion() {
     //loop over choices
     for (var i = 0; i < currentQuestion.options.length; i++) {
         console.log(currentQuestion);
-        console.log(currentQuestion.options)
+        console.log(currentQuestion.options);
 
         //create button for each choice
         var choice = currentQuestion.options[i];
@@ -53,5 +54,50 @@ function getQuestion() {
         //display on page
         optionsEl.appendChild(choiceNode);
 
+    }
+}
+
+function questionClick(event) {
+    var buttonEl = event.target;
+
+    //if clicked element is not a choice button do nothing
+    if (!buttonEl.matches('.choice')) {
+        return;
+    }
+
+    //check if user guessed wrong
+    if (buttonEl.value !== questions[currentQuestionIndex].answer) {
+        //penalize time
+        time -= 15;
+
+        if (time < 0) {
+            time = 0;
+        }
+
+        //display new time on page
+        timerEl.textContent = time;
+
+
+        feedbackEl.textContent = 'wrong!';
+
+    } else {
+
+        feedbackEl.textContent = 'correct!';
+    }
+
+    //display correct/incorrect feedback on page for half sec
+    feedbackEl.setAttribute('class', 'feedback');
+    setTimeout(function () {
+        feedbackEl.setAttribute('class', 'feedback hide');
+    }, 1000);
+
+    //next question
+    currentQuestionIndex++;
+
+    // check if any questions left
+    if (time <= 0 || currentQuestionIndex === questions.length) {
+        quizEnd();
+    } else {
+        getQuestion();
     }
 }
