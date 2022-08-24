@@ -12,3 +12,16 @@ var timerEl = document.getElementById('time');
 var submitBtn = document.getElementById('submit');
 var startBtn = document.getElementById('start');
 var nameEl = document.getElementById('name');
+
+// start quiz function
+
+function startQuiz() {
+
+    questionsEl.removeAttribute('class');
+
+    timerId = setInterval(clockTick, 1000);
+
+    timerEl.textContent = time;
+
+    getQuestion();
+}
