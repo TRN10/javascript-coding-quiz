@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+
 }
 
 body {
@@ -20,6 +21,21 @@ body {
 .timer-count {
   font-size: xx-large;
 
+}
+
+.timer {
+
+  padding-left: 50px;
+  font-size: x-large;
+
+}
+
+#quiz-question {
+  padding: 50, 40, 50;
+}
+
+.choices button {
+  display: block;
 }
 
 #high-scores {

@@ -175,6 +175,7 @@ startBtn.onclick = startQuiz;
 // user clicks on element with choices
 optionsEl.onclick = questionClick;
 
+
 function saveHighScore() {
     // obtain value of input box
     var initials = initialsEl.value.trim();
