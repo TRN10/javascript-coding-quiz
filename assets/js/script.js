@@ -46,7 +46,7 @@ var optionsEl = document.getElementById('choices');
 var timerEl = document.getElementById('time');
 var submitBtn = document.getElementById('submit');
 var startBtn = document.getElementById('start');
-var nameEl = document.getElementById('name');
+var initalsEl = document.getElementById('initials');
 var feedbackEl = document.getElementById('feedback');
 
 // start quiz function
@@ -174,3 +174,37 @@ startBtn.onclick = startQuiz;
 
 // user clicks on element with choices
 optionsEl.onclick = questionClick;
+
+function saveHighScore() {
+    // obtain value of input box
+    var initials = initialsEl.value.trim();
+
+    if (initials !== '') {
+        // get saved scores from local storage, or set to empty array if none saved
+        var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
+
+        // format new score for current user
+        var newScore = {
+            score: time,
+            initials: initials,
+        };
+
+        // save to local storage
+        highscores.push(newScore);
+        window.localStorage.setItem('highscores', JSON.stringify(highscores));
+
+        // redirect to next page
+        window.location.href = 'high-scores.html';
+    }
+}
+
+function checkForEnter(event) {
+    if (event.key === 'Enter') {
+        saveHighScore();
+    }
+}
+
+// user clicks button to submit initials
+submitBtn.onclick = saveHighScore;
+
+initalsEl.onkeyup = checkForEnter;
