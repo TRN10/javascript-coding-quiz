@@ -25,21 +25,21 @@ body {
 
 .timer {
 
-  padding-left: 50px;
+  padding-right: 50px;
   font-size: x-large;
 
 }
 
-#quiz-question {
-  padding: 50, 40, 50;
-}
+
 
 .choices button {
+  margin-bottom: 20px;
   display: block;
 }
 
-#high-scores {
-  margin-top: 100px;
+.scores {
+
+  padding-right: 20px;
   color: inherit;
   text-decoration: none;
 }

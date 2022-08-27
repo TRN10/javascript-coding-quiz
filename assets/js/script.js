@@ -46,7 +46,7 @@ var optionsEl = document.getElementById('choices');
 var timerEl = document.getElementById('time');
 var submitBtn = document.getElementById('submit');
 var startBtn = document.getElementById('start');
-var initalsEl = document.getElementById('initials');
+var initialsEl = document.getElementById('initials');
 var feedbackEl = document.getElementById('feedback');
 
 // start quiz function
@@ -177,6 +177,7 @@ optionsEl.onclick = questionClick;
 
 
 function saveHighScore() {
+
     // obtain value of input box
     var initials = initialsEl.value.trim();
 
