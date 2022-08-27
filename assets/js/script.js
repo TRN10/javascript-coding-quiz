@@ -195,6 +195,8 @@ function saveHighScore() {
         highscores.push(newScore);
         window.localStorage.setItem('highscores', JSON.stringify(highscores));
 
+        highscores.textContent = newScore;
+
         // redirect to next page
         window.location.href = 'highscores.html';
     }
