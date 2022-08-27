@@ -226,8 +226,9 @@ function listHighScores() {
 
 
     for (var i = 0; i < highScoresEl.length; i++) {
-        document.createElement('li');
-        document.appendChild(highScoresEl);
+        var createLi = document.createElement("li");
+        createLi.textContent = highScoresEl[i].initials + " " + highScoresEl[i].score;
+        highscores.appendChild(createLi);
 
     }
 }
