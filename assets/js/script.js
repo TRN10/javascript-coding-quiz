@@ -211,4 +211,21 @@ function checkForEnter(event) {
 // user clicks button to submit initials
 submitBtn.onclick = saveHighScore;
 
-initalsEl.onkeyup = checkForEnter;
+initialsEl.onkeyup = checkForEnter;
+
+
+
+
+
+// function to render high scores
+
+function listHighScores() {
+
+    var highScoresEl = document.getElementById('highscores');
+
+
+    for (var i = 0; i < highScoresEl.length; i++) {
+        document.createElement('li');
+
+    }
+}
