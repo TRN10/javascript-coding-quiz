@@ -199,6 +199,7 @@ function saveHighScore() {
 
         // redirect to next page
         window.location.href = 'highscores.html';
+        listHighScores();
     }
 }
 
@@ -226,6 +227,7 @@ function listHighScores() {
 
     for (var i = 0; i < highScoresEl.length; i++) {
         document.createElement('li');
+        document.appendChild(highScoresEl);
 
     }
 }
