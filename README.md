@@ -7,3 +7,5 @@ This application is a quiz with coding based mulitiple choice questions. The qui
 This challenge used many concepts learned in the previous week including referencing elements from the DOM, DOM traversal, DOM manipulation, event listeners, for loop and else if statements. 
 
 ![coding-quiz-screenshot](assets/images/coding-quiz-screenshot.png)
+
+https://trn10.github.io/javascript-coding-quiz/index.html
