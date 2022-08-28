@@ -212,7 +212,7 @@ function checkForEnter(event) {
 // user clicks button to submit initials
 submitBtn.onclick = saveHighScore;
 
-initialsEl.onkeyup = checkForEnter;
+// initialsEl.onkeyup = checkForEnter;
 
 if (initialsEl) {
     initialsEl.onkeyup = checkForEnter;
