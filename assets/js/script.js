@@ -214,6 +214,9 @@ submitBtn.onclick = saveHighScore;
 
 initialsEl.onkeyup = checkForEnter;
 
+if (initialsEl) {
+    initialsEl.onkeyup = checkForEnter;
+}
 
 
 
@@ -221,14 +224,12 @@ initialsEl.onkeyup = checkForEnter;
 // function to render high scores
 
 function listHighScores() {
-
     var highScoresEl = document.getElementById('highscores');
+    var highscores = JSON.parse(window.localStorage.getItem('highscores')) || [];
 
-
-    for (var i = 0; i < highScoresEl.length; i++) {
+    for (var i = 0; i < highscores.length; i++) {
         var createLi = document.createElement("li");
-        createLi.textContent = highScoresEl[i].initials + " " + highScoresEl[i].score;
-        highscores.appendChild(createLi);
-
+        createLi.textContent = highscores[i].initials + " " + highscores[i].score;
+        highScoresEl.appendChild(createLi);
     }
 }
